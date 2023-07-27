@@ -19,7 +19,7 @@ const Watchlist = () => {
   return (
     <Layout>
       {/* Header Section */}
-      <div className="h-1/4 bg-slate-700 flex justify-center items-center">
+      <div className="h-1/4 bg-[url('movie-title-bg.png')] flex justify-center items-center">
         <div className="flex w-5/6 justify-between items-center">
           <h2 className="text-2xl font-bold">My Watchlist</h2>
           <Link to={`/`} className="text-sm text-white">

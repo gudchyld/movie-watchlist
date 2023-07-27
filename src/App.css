@@ -28,6 +28,10 @@ span {
   display: none;
 }
 
+a:hover{
+  color: rgb(196, 145, 50);
+}
+
 
 /* create a rotating loading content */
 .spinner {
