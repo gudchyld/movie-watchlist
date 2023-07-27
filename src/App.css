@@ -1,0 +1,49 @@
+body {
+  color: white;
+}
+
+/* form */
+.movie-form {
+  z-index: 1;
+  margin-top: -15px;
+}
+/* text input */
+.movie-input:focus {
+  border: none;
+  outline: none;
+}
+
+/* movie-card paragraphs */
+.movie-card p,
+span {
+  font-size: 0.68rem;
+}
+
+/* movie card holder -remove scrollbar */
+.movie-card-holder::-webkit-scrollbar {
+  display: none;
+}
+
+.movie-plot::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* create a rotating loading content */
+.spinner {
+  border: 5px solid rgba(0, 0, 0, 0.3);
+  border-top: 5px solid #007bff; 
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
