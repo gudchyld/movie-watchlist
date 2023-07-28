@@ -2,10 +2,9 @@ import { FiSearch } from "react-icons/fi";
 import { FaStar } from "react-icons/fa";
 import { HiOutlineFilm } from "react-icons/hi";
 import { MdAddCircle } from "react-icons/md";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
 
 const MovieSearch = () => {
   const [movieName, setMovieName] = useState("");
@@ -14,12 +13,11 @@ const MovieSearch = () => {
   const [watchlistArray, setWatchlistArray] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log("watchlist array value", watchlistArray);
-
   // The UseEffect for saving to localStorage
-  useEffect(() => {
-    localStorage.setItem("watchlist", JSON.stringify(watchlistArray));
-  }, [watchlistArray]);
+  // useEffect(() => {
+  //   console.log("movieSearch Use Effect Triggered")
+  //   window.localStorage.setItem("watchlist", JSON.stringify(watchlistArray));
+  // }, [watchlistArray]);
 
   function handleSearch(e) {
     e.preventDefault();
@@ -27,11 +25,14 @@ const MovieSearch = () => {
   }
 
   function handleWatchlistAdd(watchlistID) {
-    console.log("watchlist Id", watchlistID);
     // loop through movieData array
     for (let data of movieData) {
       if (data.imdbID === watchlistID) {
-        console.log("found the id");
+        // Save the found data to localstorage as watchlist
+        window.localStorage.setItem(
+          "watchlist",
+          JSON.stringify([...watchlistArray, data])
+        );
         setWatchlistArray([...watchlistArray, data]);
       }
     }

@@ -1,20 +1,21 @@
 import { Link } from "react-router-dom";
 import Layout from "../layout/Layout";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { MdRemoveCircle, MdAddCircle } from "react-icons/md";
 
 const Watchlist = () => {
-  const [watchlistArray, setWatchlistArray] = useState([]);
-  console.log("my Watchlist", watchlistArray);
+  const [watchlistArray] = useState(
+    JSON.parse(window.localStorage.getItem("watchlist")) ?? []
+  );
 
   //  The useEffect
-  useEffect(() => {
-    const watchlist = JSON.parse(localStorage.getItem("watchlist"));
-    if (watchlist) {
-      setWatchlistArray(watchlist);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const watchlist = JSON.parse(window.localStorage.getItem("watchlist"));
+  //   if (watchlist) {
+  //     setWatchlistArray(watchlist);
+  //   }
+  // }, []);
 
   return (
     <Layout>
