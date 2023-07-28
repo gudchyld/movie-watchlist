@@ -66,7 +66,7 @@ const MovieSearch = () => {
   return (
     <>
       <div className="max-w-[550px] w-[70vw] h-[90vh] bg-[#121212] flex flex-col">
-        <div className="h-1/4 bg-[url('movie-title-bg.png')] flex justify-center items-center">
+        <div className="h-1/4 bg-[url('./assets/movie-title-bg.png')] flex justify-center items-center">
           {/* Find your film / My Watchlist */}
           <div className="flex w-5/6 justify-between items-center">
             <h2 className="text-2xl font-bold">Find Your Film</h2>
