@@ -5,7 +5,7 @@ import { MdAddCircle } from "react-icons/md";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import headerBg from "../../public/movie-title-bg.png";
+
 
 const MovieSearch = () => {
   const [movieName, setMovieName] = useState("");
