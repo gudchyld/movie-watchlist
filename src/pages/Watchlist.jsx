@@ -5,7 +5,7 @@ import { FaStar } from "react-icons/fa";
 import { MdRemoveCircle, MdAddCircle } from "react-icons/md";
 
 const Watchlist = () => {
-  const [watchlistArray] = useState(
+  const [watchlistArray, setWatchlistArray] = useState(
     JSON.parse(window.localStorage.getItem("watchlist")) ?? []
   );
 
@@ -16,6 +16,13 @@ const Watchlist = () => {
   //     setWatchlistArray(watchlist);
   //   }
   // }, []);
+
+  const handleWatchlistRemove = (watchlistID) => {
+   const filtWatchlist = watchlistArray.filter(data => data.imdbID !== watchlistID);
+    window.localStorage.setItem("watchlist", JSON.stringify([filtWatchlist]))
+    setWatchlistArray(filtWatchlist);
+
+  };
 
   return (
     <Layout>
@@ -62,9 +69,9 @@ const Watchlist = () => {
                     <p>{data.Genre}</p>
                     <div className="flex items-center gap-1">
                       <span
-                        className="text-lg cursor-pointer"
+                        className="movie-remove text-lg cursor-pointer hover:text-yellow-600"
                         id={data.imdbID}
-                        onClick={null}
+                        onClick={() => handleWatchlistRemove(data.imdbID)}
                       >
                         <MdRemoveCircle />
                       </span>

@@ -41,7 +41,7 @@ const MovieSearch = () => {
   async function getMovieData() {
     try {
       const response = await axios.get(
-        `http://www.omdbapi.com?apikey=f003f343&s=${movieName}&type=movie`
+        `https://www.omdbapi.com?apikey=f003f343&s=${movieName}&type=movie`
       );
       let detailedData = [];
 
@@ -50,7 +50,7 @@ const MovieSearch = () => {
 
         for (const item of tempData) {
           const result = await axios.get(
-            `http://www.omdbapi.com?apikey=f003f343&i=${item.imdbID}`
+            `https://www.omdbapi.com?apikey=f003f343&i=${item.imdbID}`
           );
           detailedData.push(result.data);
         }
@@ -144,7 +144,7 @@ const MovieSearch = () => {
                         <p>{data.Genre}</p>
                         <div className="flex items-center gap-1">
                           <span
-                            className="text-lg cursor-pointer"
+                            className="movie-add text-lg cursor-pointer hover:text-yellow-600"
                             id={data.imdbID}
                             onClick={() => handleWatchlistAdd(data.imdbID)}
                           >

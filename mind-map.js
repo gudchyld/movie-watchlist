@@ -28,3 +28,15 @@
     {/* children come here */}
   </div>
 </>;
+
+
+// for (let data of watchlistArray) {
+//       if (data.imdbID === watchlistID) {
+//         // Remove the found data from localStorage
+//         window.localStorage.setItem(
+//           "watchlist",
+//           JSON.stringify([...watchlistArray, data])
+//         );
+//         setWatchlistArray([...watchlistArray, data]);
+//       }
+//     }
